@@ -1,0 +1,5 @@
+body { font-family: 'Poppins', sans-serif; background-color: #f9f9f9; }
+.card { box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); }
+.icon-input { position: relative; }
+.icon-input i { position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #4A5568; }
+.icon-input input, .icon-input textarea { padding-left: 40px; }

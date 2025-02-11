@@ -1,0 +1,19 @@
+
+.card {
+    margin-bottom: 20px;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.modal-header {
+    background-color: #007bff;
+    color: white;
+}
