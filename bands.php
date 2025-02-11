@@ -1,32 +1,26 @@
 <?php
-// Include your database connection here
-include('./config/DbContext.php'); // Assuming $conn is your database connection
 
-// Ensure the uploads directory exists
-$target_dir = "uploads/bands/";
+include('./config/DbContext.php'); 
+
+$target_dir = "./admin/uploads/bands";
 if (!is_dir($target_dir)) {
     mkdir($target_dir, 0777, true); // Create directory if it doesn't exist
 }
 
-// Check if the form is submitted
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Get form data safely
     $band_name = mysqli_real_escape_string($conn, $_POST['BandName']);
     $email = mysqli_real_escape_string($conn, $_POST['Email']);
     $phone_number = mysqli_real_escape_string($conn, $_POST['PhoneNumber']);
     $price = mysqli_real_escape_string($conn, $_POST['Price']);
     $description = mysqli_real_escape_string($conn, $_POST['productDescription']);
 
-    // Handle image upload
     if (!empty($_FILES['productImage']['name'])) {
         $image_name = basename($_FILES['productImage']['name']);
         $image_extension = strtolower(pathinfo($image_name, PATHINFO_EXTENSION));
 
-        // Allowed file types
         $allowed_extensions = ['jpg', 'jpeg', 'png', 'gif'];
 
         if (in_array($image_extension, $allowed_extensions)) {
-            // Generate unique file name to avoid overwriting
             $new_image_name = uniqid('band_', true) . "." . $image_extension;
             $target_file = $target_dir . $new_image_name;
 

@@ -24,7 +24,7 @@
     <div class="container mx-auto flex justify-between items-center">
         <!-- Logo -->
         <div class="flex items-center space-x-4">
-  <img src="./assets/images/logo.png" alt="Logo" class="w-12 h-12 rounded-full">
+  <img src="../assets/images/logo.png" alt="Logo" class="w-12 h-12 rounded-full">
   <div class="text-indigo-600 text-3xl font-bold">ADF</div>
 </div>
 

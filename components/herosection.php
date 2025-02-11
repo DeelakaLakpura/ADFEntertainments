@@ -38,17 +38,19 @@
       </div>
 
       <!-- Image with floating animation -->
-      <div class="flex-1 relative animate-float">
-        <div class="relative rounded-2xl overflow-hidden shadow-2xl hover:shadow-3xl transition-shadow duration-300">
-          <img 
-            src="https://i.ibb.co/mVWMjdkS/img.jpg" 
-            alt="Startup growth" 
-            class="w-full h-full object-cover"
-            loading="lazy"
-          />
-          <div class="absolute inset-0 bg-indigo-600/10 mix-blend-multiply"></div>
-        </div>
-      </div>
+      <div class="relative w-full max-w-lg mx-auto">
+  <!-- Image Container -->
+  <div class="relative rounded-2xl overflow-hidden shadow-2xl hover:shadow-3xl transition-shadow duration-300">
+    <img 
+      id="slider-image"
+      src="https://i.ibb.co/mVWMjdkS/img.jpg" 
+      alt="Startup growth" 
+      class="w-full h-full object-cover transition-opacity duration-1000 opacity-100"
+      loading="lazy"
+    />
+    <div class="absolute inset-0 bg-indigo-600/10 mix-blend-multiply"></div>
+  </div>
+</div>
     </div>
 
    
@@ -92,3 +94,25 @@
     .delay-300 { animation-delay: 300ms; }
   </style>
 </section>
+<script>
+  const images = [
+    "https://i.ibb.co/mVWMjdkS/img.jpg", 
+    "https://cdn.prod.website-files.com/655e0fa544c67c1ee5ce01c7/655e0fa544c67c1ee5ce0f7c_how-to-start-a-band-and-get-booked-header.jpeg",
+    "https://img.freepik.com/premium-photo/live-music-concert-stage-background_800563-6860.jpg"
+  ];
+
+  let currentIndex = 0;
+  const sliderImage = document.getElementById("slider-image");
+
+  function changeImage() {
+    currentIndex = (currentIndex + 1) % images.length;
+    sliderImage.classList.add("opacity-0");
+
+    setTimeout(() => {
+      sliderImage.src = images[currentIndex];
+      sliderImage.classList.remove("opacity-0");
+    }, 500);
+  }
+
+  setInterval(changeImage, 3000);
+</script>

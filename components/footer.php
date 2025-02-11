@@ -4,8 +4,8 @@
             <!-- Logo and About -->
             <div class="flex flex-col space-y-4">
                 <div class="flex items-center space-x-3">
-                    <img src="your-logo.png" alt="ADFEntertainments Logo" class="w-14 h-14">
-                    <h2 class="text-2xl font-bold">ADFEntertainments</h2>
+                    <img src="./assets/images/logo.png" alt="ADFEntertainments Logo" class="w-14 h-14">
+                    <h2 class="text-2xl font-bold">ADF</h2>
                 </div>
                 <p class="text-gray-400 text-sm">Bringing the best entertainment experiences to your screens, from concerts to exclusive events.</p>
             </div>
@@ -50,4 +50,3 @@
 </footer>
 
 <!-- FontAwesome CDN -->
-<script src="https://kit.fontawesome.com/YOUR-FONTAWESOME-KIT.js" crossorigin="anonymous"></script>

@@ -75,9 +75,8 @@
             <i class="fas fa-home"></i>
             <span>Home</span>
           </a>
-          <a href="#about" class="menu-item text-white flex items-center space-x-2">
-            <i class="fas fa-info-circle"></i>
-            <span>About</span>
+          <a href="./events.php" class="menu-item text-white flex items-center space-x-2">
+          <i class="fas fa-calendar"></i>            <span>Events</span>
           </a>
           <a href="#event-management" class="menu-item text-white flex items-center space-x-2">
             <i class="fas fa-briefcase"></i>

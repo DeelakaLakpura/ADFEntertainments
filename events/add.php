@@ -8,7 +8,7 @@ include '../config/DbContext.php';
 $successMessage = $errorMessage = '';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $uploadDir = "../uploads/events";
+    $uploadDir = "../admin/uploads/events";
     $imagePath = "";
 
     // Handle file upload
@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         status
     ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
     
-    $default_status = "active"; 
+    $default_status = "pending"; 
     
     $stmt->bind_param(
         "sssisssss", 
@@ -87,7 +87,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
-        body { font-family: 'Poppins', sans-serif; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); }
+        body {  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); }
         .card { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); }
         .gradient-bg { background: linear-gradient(135deg,rgb(21, 38, 114) 0%,rgb(41, 9, 218) 100%); }
         .input-group { transition: all 0.3s ease; }
@@ -96,7 +96,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body >
     <?php include'../components/topnav.php' ?>
-    <div class="min-h-screen py-10">
+    <div class="min-h-screen py-10" style="font-family: 'Poppins', sans-serif;">
     <div class="max-w-4xl mx-auto px-4">
         <div class="card rounded-2xl p-8 shadow-2xl">
             <div class="gradient-bg text-white rounded-2xl p-8 mb-8 text-center">
