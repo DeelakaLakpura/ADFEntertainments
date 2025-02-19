@@ -12,6 +12,8 @@
     <?php include("./components/topnav.php");?>
     <?php include("./components/herosection.php");?>
     <?php include("./components/counting.php");?>
+    <?php include("./components/reviews.php");?>
+
     <?php include("./components/footer.php");?>
 </body>
 </html>

@@ -1,0 +1,16 @@
+{
+    "name": "user/adf-entertainments",
+    "autoload": {
+        "psr-4": {
+            "User\\AdfEntertainments\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "dula"
+        }
+    ],
+    "require": {
+        "stripe/stripe-php": "*"
+    }
+}

@@ -1,52 +1,73 @@
-<footer class="bg-gray-900 text-white py-12">
-    <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <!-- Logo and About -->
-            <div class="flex flex-col space-y-4">
-                <div class="flex items-center space-x-3">
-                    <img src="./assets/images/logo.png" alt="ADFEntertainments Logo" class="w-14 h-14">
-                    <h2 class="text-2xl font-bold">ADF</h2>
-                </div>
-                <p class="text-gray-400 text-sm">Bringing the best entertainment experiences to your screens, from concerts to exclusive events.</p>
-            </div>
-            
-            <!-- Quick Links -->
-            <div>
-                <h3 class="text-lg font-semibold text-white mb-3">Quick Links</h3>
-                <ul class="space-y-2 text-gray-400 text-sm">
-                    <li><a href="#" class="hover:text-blue-400"><i class="fas fa-home mr-2"></i>Home</a></li>
-                    <li><a href="#" class="hover:text-blue-400"><i class="fas fa-info-circle mr-2"></i>About Us</a></li>
-                    <li><a href="#" class="hover:text-blue-400"><i class="fas fa-cogs mr-2"></i>Services</a></li>
-                    <li><a href="#" class="hover:text-blue-400"><i class="fas fa-envelope mr-2"></i>Contact</a></li>
-                </ul>
-            </div>
-            
-            <!-- Contact Info -->
-            <div>
-                <h3 class="text-lg font-semibold text-white mb-3">Contact</h3>
-                <p class="text-gray-400 text-sm"><i class="fas fa-map-marker-alt mr-2"></i>123 Entertainment St, New York, USA</p>
-                <p class="text-gray-400 text-sm"><i class="fas fa-phone-alt mr-2"></i>+1 234 567 890</p>
-                <p class="text-gray-400 text-sm"><i class="fas fa-envelope mr-2"></i>support@adfentertainments.com</p>
-            </div>
-            
-            <!-- Social Media Links -->
-            <div>
-                <h3 class="text-lg font-semibold text-white mb-3">Follow Us</h3>
-                <div class="flex space-x-4">
-                    <a href="#" class="text-gray-400 hover:text-blue-400 text-xl"><i class="fab fa-facebook"></i></a>
-                    <a href="#" class="text-gray-400 hover:text-blue-400 text-xl"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="text-gray-400 hover:text-blue-400 text-xl"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="text-gray-400 hover:text-blue-400 text-xl"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" class="text-gray-400 hover:text-blue-400 text-xl"><i class="fab fa-youtube"></i></a>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Copyright Section -->
-        <div class="text-center text-gray-500 text-sm mt-10 border-t border-gray-700 pt-4">
-            &copy; 2025 ADFEntertainments. All Rights Reserved.
-        </div>
-    </div>
-</footer>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADF Entertainment</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-<!-- FontAwesome CDN -->
+</head>
+<body >
+    <footer class="bg-gradient-to-b from-gray-900 to-gray-800 text-gray-200">
+        <div class="max-w-7xl mx-auto px-4 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-2">
+                        <img src="./assets/images/logo.png" alt="ADF Logo" class="w-10 h-10 rounded-full">
+                        <h2 class="text-xl font-bold text-blue-500">ADF Entertainment</h2>
+                    </div>
+                    <p class="text-sm">Your premier destination for live entertainment and unforgettable experiences.</p>
+                    <p class="text-sm">&copy; 2024 ADF Entertainment. All rights reserved.</p>
+                </div>
+
+                <div class="space-y-4">
+                    <h3 class="text-lg font-semibold text-blue-500">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-blue-400 transition-colors">Home</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition-colors">Events</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition-colors">Tickets</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition-colors">About Us</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition-colors">Contact</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div class="space-y-4">
+                    <h3 class="text-lg font-semibold text-blue-500">Contact Us</h3>
+                    <div class="space-y-2 text-sm">
+                        <p><i class="fas fa-map-marker-alt mr-2 text-blue-400"></i>123 Entertainment Ave, Los Angeles, CA 90028</p>
+                        <p><i class="fas fa-envelope mr-2 text-blue-400"></i>support@adfent.com</p>
+                        <p><i class="fas fa-phone mr-2 text-blue-400"></i>+1 (888) 123-4567</p>
+                        <p><i class="fas fa-clock mr-2 text-blue-400"></i>Mon-Fri: 9AM-6PM PST</p>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <h3 class="text-lg font-semibold text-blue-500">Newsletter</h3>
+                    <form class="space-y-4">
+                        <input type="email" placeholder="Enter your email" class="w-full px-4 py-2 rounded bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <div class="flex items-start space-x-2">
+                            <input type="checkbox" id="gdpr" class="mt-1">
+                            <label for="gdpr" class="text-xs">I agree to receive marketing emails and accept the privacy policy</label>
+                        </div>
+                        <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded transition-colors">Subscribe</button>
+                    </form>
+
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- <button id="scrollToTop" class="fixed bottom-8 right-8 bg-blue-500 text-white p-3 rounded-full shadow-lg hover:bg-blue-600 transition-colors" aria-label="Scroll to top">
+            <i class="fas fa-arrow-up"></i>
+        </button> -->
+    </footer>
+</body>
+</html>

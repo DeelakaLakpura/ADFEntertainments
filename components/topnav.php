@@ -78,7 +78,7 @@
           <a href="./events.php" class="menu-item text-white flex items-center space-x-2">
           <i class="fas fa-calendar"></i>            <span>Events</span>
           </a>
-          <a href="#event-management" class="menu-item text-white flex items-center space-x-2">
+          <a href="./event_managment.php" class="menu-item text-white flex items-center space-x-2">
             <i class="fas fa-briefcase"></i>
             <span>EM Companies</span>
           </a>

@@ -19,8 +19,8 @@
 </head>
 <body class="bg-gradient-to-br from-gray-100 to-blue-50">
 
-<!-- Navbar -->
-<nav class="bg-white shadow-md p-4">
+
+<nav style="font-family: poppins;" class="bg-white shadow-md p-4">
     <div class="container mx-auto flex justify-between items-center">
         <!-- Logo -->
         <div class="flex items-center space-x-4">
@@ -29,7 +29,7 @@
 </div>
 
         
-        <!-- Search Bar -->
+      
         <div class="relative w-1/3">
             <input type="text" placeholder="Search..." class="w-full p-2 pl-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
             <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
@@ -61,8 +61,8 @@
                 </div>
             </div>
 
-            <a href="#" class="text-gray-700 text-lg flex items-center navbar-link">
-                <i class="fas fa-bell mr-2"></i> Notifications
+            <a href="./companies.php" class="text-gray-700 text-lg flex items-center navbar-link">
+                <i class="fas fa-house mr-2"></i> EM Companies
             </a>
             
             <a href="#" class="text-red-500 text-lg flex items-center navbar-link">

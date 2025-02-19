@@ -95,21 +95,25 @@ $conn->close();
             <?php if (empty($tickets)): ?>
                 <p class="text-gray-600">No tickets available.</p>
             <?php else: ?>
-                <form action="purchase_ticket.php" method="POST">
-                    <input type="hidden" name="event_id" value="<?= $event_id ?>">
-                    <div class="space-y-4">
-                        <?php foreach ($tickets as $ticket): ?>
-                            <div class="flex justify-between items-center border p-4 rounded-lg shadow-sm">
-                                <div>
-                                    <h3 class="text-2xl font-bold"> <?= htmlspecialchars($ticket['ticket_type']) ?> </h3>
-                                    <p class="text-gray-600">Rs. <?= number_format($ticket['price'], 2) ?></p>
-                                </div>
-                                <input type="number" name="tickets[<?= $ticket['ticket_id'] ?>]" min="0" value="0" class="w-16 p-2 border rounded-lg">
-                            </div>
-                        <?php endforeach; ?>
-                    </div>
-                    <button type="submit" class="btn btn-primary mt-6 w-full">Purchase Tickets</button>
-                </form>
+                <form action="payment.php" method="POST">
+    <input type="hidden" name="event_id" value="<?= $event_id ?>">
+    <input type="hidden" name="event_name" value="<?= htmlspecialchars($event['event_name']) ?>">
+    <div class="space-y-4">
+        <?php foreach ($tickets as $ticket): ?>
+            <div class="flex justify-between items-center border p-4 rounded-lg shadow-sm">
+                <div>
+                    <h3 class="text-2xl font-bold"><?= htmlspecialchars($ticket['ticket_type']) ?></h3>
+                    <p class="text-gray-600">Rs. <?= number_format($ticket['price'], 2) ?></p>
+                </div>
+                <input type="hidden" name="ticket_price[<?= $ticket['ticket_id'] ?>]" value="<?= $ticket['price'] ?>">
+                <input type="hidden" name="ticket_type[<?= $ticket['ticket_id'] ?>]" value="<?= htmlspecialchars($ticket['ticket_type']) ?>">
+                <input type="number" name="tickets[<?= $ticket['ticket_id'] ?>]" min="0" value="0" class="w-16 p-2 border rounded-lg">
+            </div>
+        <?php endforeach; ?>
+    </div>
+    <button type="submit" class="btn btn-primary mt-6 w-full">Proceed to Payment</button>
+</form>
+
             <?php endif; ?>
         </div>
     </main>
