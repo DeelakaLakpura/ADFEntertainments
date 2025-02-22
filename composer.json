@@ -11,6 +11,7 @@
         }
     ],
     "require": {
-        "stripe/stripe-php": "*"
+        "stripe/stripe-php": "*",
+        "endroid/qr-code": "*"       
     }
 }

@@ -86,11 +86,11 @@
             <i class="fas fa-guitar"></i>
             <span>Bands</span>
           </a>
-          <a href="#security" class="menu-item text-white flex items-center space-x-2">
+          <a href="./security_companies.php" class="menu-item text-white flex items-center space-x-2">
             <i class="fas fa-shield-alt"></i>
             <span>Security Companies</span>
           </a>
-          <a href="#venues" class="menu-item text-white flex items-center space-x-2">
+          <a href="./venues.php" class="menu-item text-white flex items-center space-x-2">
             <i class="fas fa-building"></i>
             <span>Venue Renters</span>
           </a>

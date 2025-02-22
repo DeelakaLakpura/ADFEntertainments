@@ -153,15 +153,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 <!-- Location & Organizer Section -->
                 <div class="grid md:grid-cols-2 gap-6">
-                    <div class="input-group">
-                        <label class="block text-gray-700 mb-2 font-medium">Location</label>
-                        <div class="flex items-center space-x-3 bg-white p-3 rounded-lg border border-gray-200">
-                            <i class="fas fa-map-marker-alt text-yellow-500"></i>
-                            <input type="text" name="location" required 
-                                   class="w-full outline-none bg-transparent"
-                                   placeholder="Enter event location">
-                        </div>
-                    </div>
+                <div class="input-group">
+    <label class="block text-gray-700 mb-2 font-medium">Location</label>
+    <div class="flex items-center space-x-3 bg-white p-3 rounded-lg border border-gray-200">
+        <i class="fas fa-map-marker-alt text-yellow-500"></i>
+        <input id="location-input" type="text" name="location" required
+               class="w-full outline-none bg-transparent"
+               placeholder="Enter event location">
+        <button id="get-location-btn" type="button"
+                class="bg-blue-500 text-white px-3 py-2 rounded-lg hover:bg-blue-600">
+            📍 Get Location
+        </button>
+    </div>
+</div>
+<div id="coordinates" class="text-sm text-gray-600 mt-2"></div>
+
 
                     <div class="input-group">
                         <label class="block text-gray-700 mb-2 font-medium">Organizer Name</label>
@@ -232,6 +238,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
 
     <script>
+         document.getElementById("get-location-btn").addEventListener("click", function () {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+                async (position) => {
+                    const lat = position.coords.latitude;
+                    const lng = position.coords.longitude;
+                    document.getElementById("coordinates").innerText = `Latitude: ${lat}, Longitude: ${lng}`;
+
+                    // Get readable address using Google Maps Geocoding API
+                    const apiKey = 'AIzaSyBrUYwT8J1y4mzLbhL9d8_pMtLedyeWRF0'; // 🔑 Replace with your API key
+                    const response = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=${apiKey}`);
+                    const data = await response.json();
+                    if (data.status === 'OK' && data.results[0]) {
+                        document.getElementById("location-input").value = data.results[0].formatted_address;
+                    } else {
+                        alert('Could not fetch address. Try again.');
+                    }
+                },
+                (error) => {
+                    alert(`Error: ${error.message}`);
+                }
+            );
+        } else {
+            alert("Geolocation is not supported by this browser.");
+        }
+    });
         function addTicketType() {
             const container = document.getElementById('ticketContainer');
             const newField = document.createElement('div');

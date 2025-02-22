@@ -41,7 +41,7 @@ $conn->close();
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&callback=initMap" async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBrUYwT8J1y4mzLbhL9d8_pMtLedyeWRF0&callback=initMap"></script>
     <style>
         body {  background: #f9fafb; }
         .btn { display: inline-block; padding: 12px 20px; border-radius: 8px; transition: 0.3s ease; }
@@ -121,5 +121,20 @@ $conn->close();
     <?php include'./components/footer.php'; ?>
 
     </div>
+    <script>
+      window.initMap = function() {
+    const location = { lat: <?= $event['latitude'] ?>, lng: <?= $event['longitude'] ?> };
+    const map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 15,
+        center: location,
+    });
+    new google.maps.Marker({
+        position: location,
+        map: map,
+    });
+};
+
+
+    </script>
 </body>
 </html>

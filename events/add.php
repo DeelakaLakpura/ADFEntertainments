@@ -153,14 +153,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 <!-- Location & Organizer Section -->
                 <div class="grid md:grid-cols-2 gap-6">
-                    <div class="input-group">
-                        <label class="block text-gray-700 mb-2 font-medium">Location</label>
-                        <div class="flex items-center space-x-3 bg-white p-3 rounded-lg border border-gray-200">
-                            <i class="fas fa-map-marker-alt text-yellow-500"></i>
-                            <input type="text" name="location" required 
-                                   class="w-full outline-none bg-transparent"
-                                   placeholder="Enter event location">
-                        </div>
+                <div class="input-group">
+    <label class="block text-gray-700 mb-2 font-medium">Location</label>
+    <div class="flex items-center space-x-3 bg-white p-3 rounded-lg border border-gray-200">
+        <i class="fas fa-map-marker-alt text-yellow-500"></i>
+        <input type="text" id="location" name="location" required 
+               class="w-full outline-none bg-transparent"
+               placeholder="Enter event location">
+        <button id="getLocationBtn" type="button" 
+                class="bg-blue-500 text-white px-3 py-1 rounded-lg hover:bg-blue-600">
+            📍 Get Location
+        </button>
+    </div>
+
                     </div>
 
                     <div class="input-group">
@@ -230,7 +235,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
     </div>
     </div>
-
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBrUYwT8J1y4mzLbhL9d8_pMtLedyeWRF0&libraries=places"></script>
     <script>
         function addTicketType() {
             const container = document.getElementById('ticketContainer');
@@ -282,6 +287,55 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 confirmButtonColor: '#667eea'
             });
         <?php endif; ?>
+
+
+        document.getElementById('getLocationBtn').addEventListener('click', () => {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition, showError);
+        } else {
+            alert("Geolocation is not supported by this browser.");
+        }
+    });
+
+    function showPosition(position) {
+        const lat = position.coords.latitude;
+        const lng = position.coords.longitude;
+        getAddressFromCoordinates(lat, lng);
+    }
+
+    function getAddressFromCoordinates(lat, lng) {
+        const geocoder = new google.maps.Geocoder();
+        const latlng = { lat: parseFloat(lat), lng: parseFloat(lng) };
+
+        geocoder.geocode({ location: latlng }, (results, status) => {
+            if (status === "OK") {
+                if (results[0]) {
+                    document.getElementById('location').value = results[0].formatted_address;
+                } else {
+                    alert("No results found");
+                }
+            } else {
+                alert("Geocoder failed due to: " + status);
+            }
+        });
+    }
+
+    function showError(error) {
+        switch (error.code) {
+            case error.PERMISSION_DENIED:
+                alert("User denied the request for Geolocation.");
+                break;
+            case error.POSITION_UNAVAILABLE:
+                alert("Location information is unavailable.");
+                break;
+            case error.TIMEOUT:
+                alert("The request to get user location timed out.");
+                break;
+            case error.UNKNOWN_ERROR:
+                alert("An unknown error occurred.");
+                break;
+        }
+    }
     </script>
 
 <?php include '../components/footer.php' ?>
